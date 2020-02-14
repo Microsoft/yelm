@@ -29,6 +29,8 @@
 .modals.dimmer .ui.fullscreen.scrolling.modal {
     position: absolute !important;
     top: 0 !important;
+    left: 0 !important;
+    transform: none;
     margin: 0 !important;
     padding: 0 !important;
     border: 0 !important;
@@ -40,6 +42,32 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: 'touch';
     user-select: none;
+}
+
+.modals.dimmer .ui.scrolling.modal {
+    margin: 3.5rem auto !important;
+    top: auto;
+}
+
+.ui.modal {
+  position: fixed;
+  display: none;
+  z-index: @zIndex;
+  text-align: left;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  background: @background;
+  border: @border;
+  box-shadow: @boxShadow;
+  transform-origin: @transformOrigin;
+
+  flex: 0 0 auto;
+
+  border-radius: @borderRadius;
+  user-select: text;
+  will-change: top, left, margin, transform, opacity;
 }
 
 /* Back button */
@@ -192,7 +220,7 @@
         .has-actions.content {
             height: calc(100% - @thinMenuHeight - @mainMenuHeight);
         }
-    }    
+    }
 }
 
 /*******************************
@@ -201,7 +229,7 @@
 
 .ui.modal .closeIcon {
     position: absolute;
-    top: 0; 
+    top: 0;
     right: 0;
     height: 4.5rem;
     width: 4.5rem;

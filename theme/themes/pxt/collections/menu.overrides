@@ -19,6 +19,15 @@
     min-height: @mainMenuMinHeight !important;
 }
 
+.ui.menu:not(.vertical) {
+    >.menu {
+        margin-right: auto;
+    }
+    .right.menu {
+        margin-right: 0;
+    }
+}
+
 .menubar .item > .button {
     margin-right: 0.25rem;
     padding: 0.6rem;

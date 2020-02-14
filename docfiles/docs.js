@@ -321,7 +321,8 @@ function setupLangPicker() {
             },
             onHide: function() {
                 $(document).off("focusin.focusJail");
-            }
+            },
+            transition: "fade"
         });
 
         var langPicker = document.querySelector("#langpicker");
