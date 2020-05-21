@@ -25,7 +25,9 @@ namespace pxt.BrowserUtils {
     }
 
     export function isIOS(): boolean {
-        return hasNavigator() && /iPad|iPhone|iPod/.test(navigator.userAgent);
+        return (hasNavigator() && /iPad|iPhone|iPod/.test(navigator.userAgent))
+            || (/iPad|iPhone|iPod/.test(navigator.platform) // fails on iPad iOS13 webview
+                || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) && !window.hasOwnProperty('MSStream'); // therefore we check for MacIntel platform with multiple touch and make sure its not an IE.
     }
 
     //MacIntel on modern Macs
@@ -85,7 +87,8 @@ namespace pxt.BrowserUtils {
     export function isSafari(): boolean {
         //Could also check isMac but I don't want to risk excluding iOS
         //Checking for iPhone, iPod or iPad as well as Safari in order to detect home screen browsers on iOS
-        return !isChrome() && !isEdge() && !!navigator && /(Macintosh|Safari|iPod|iPhone|iPad)/i.test(navigator.userAgent);
+        return !isChrome() && !isEdge() && !!navigator && /(Macintosh|Safari|iPod|iPhone|iPad)/i.test(navigator.userAgent)
+            || (((navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) && !window.hasOwnProperty('MSStream')); // iPad  with IOS > 13
     }
 
     //Safari and WebKit lie about being Firefox
