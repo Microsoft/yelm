@@ -202,7 +202,7 @@
 <value name="BOOL">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
 <block type="typescript_expression">
-<field name="EXPRESSION">&#40;&#40;&#40;10&#41;&#41;&#41;</field>
+<field name="EXPRESSION">(((10)))</field>
 </block>
 </value>
 </block>
@@ -286,7 +286,7 @@
 <value name="A">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
 <block type="typescript_expression">
-<field name="EXPRESSION">7 &#124; 8</field>
+<field name="EXPRESSION">7 | 8</field>
 </block>
 </value>
 <value name="B">
@@ -467,7 +467,7 @@
 <value name="BOOL">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
 <block type="typescript_expression">
-<field name="EXPRESSION">&#40;1&#41;</field>
+<field name="EXPRESSION">(1)</field>
 </block>
 </value>
 </block>

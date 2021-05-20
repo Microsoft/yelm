@@ -2,10 +2,10 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation declaredvars="a" numlines="1" error="Enum value without a corresponding block" line0="let a &#61; TestEnum.testValue1&#59;" />
+<mutation declaredvars="a" numlines="1" error="Enum value without a corresponding block" line0="let a = TestEnum.testValue1;" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Enum value without a corresponding block" line0="a &#61; TestEnum.testValue2&#59;" />
+<mutation numlines="1" error="Enum value without a corresponding block" line0="a = TestEnum.testValue2;" />
 </block>
 </next>
 </block>

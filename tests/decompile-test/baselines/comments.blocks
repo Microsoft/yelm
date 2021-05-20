@@ -89,7 +89,7 @@
 <field name="NUM">10</field>
 </shadow>
 </value>
-<data>0&#59;1</data>
+<data>0;1</data>
 <comment pinned="false">Comment</comment>
 </block>
 </next>

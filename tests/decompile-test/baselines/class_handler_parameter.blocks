@@ -12,7 +12,7 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation declaredvars="x" numlines="1" error="Unsupported syntax kind for output expression block&#58; NewExpression" line0="let x &#61; new game.Sprite&#40;&#41;&#59;" />
+<mutation declaredvars="x" numlines="1" error="Unsupported syntax kind for output expression block: NewExpression" line0="let x = new game.Sprite();" />
 </block>
 </statement>
 </block>

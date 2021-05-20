@@ -2,7 +2,7 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation numlines="1" error="Function call not supported in the blocks" line0="banned.shouldNotDecompile&#40;&#41;&#59;" />
+<mutation numlines="1" error="Call statements must have a valid declared function" line0="banned.shouldNotDecompile();" />
 </block>
 </statement>
 </block>

@@ -23,7 +23,7 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Enum arguments may only be literal property access expressions" line0="x.testMethodWithEnum&#40;58&#41;" />
+<mutation numlines="1" error="Enum arguments may only be literal property access expressions" line0="x.testMethodWithEnum(58)" />
 </block>
 </next>
 </block>

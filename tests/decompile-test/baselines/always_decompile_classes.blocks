@@ -2,10 +2,10 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation numlines="6" error="Unsupported statement in block&#58; ClassDeclaration" line0="class Foo &#123;" line1="    x&#58; number&#59;" line2="    constructor&#40;&#41; &#123;" line3="        this.x &#61; 0" line4="    &#125;" line5="&#125;" />
+<mutation numlines="6" error="Unsupported statement in block: ClassDeclaration" line0="class Foo {" line1="    x: number;" line2="    constructor() {" line3="        this.x = 0" line4="    }" line5="}" />
 <next>
 <block type="typescript_statement">
-<mutation declaredvars="y" numlines="1" error="Unsupported syntax kind for output expression block&#58; NewExpression" line0="let y &#61; new Foo&#40;&#41;" />
+<mutation declaredvars="y" numlines="1" error="Unsupported syntax kind for output expression block: NewExpression" line0="let y = new Foo()" />
 <next>
 <block type="device_show_number">
 <value name="number">

@@ -2,7 +2,7 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation declaredvars="x" numlines="1" error="Undefined is not supported in blocks" line0="let x&#58; ImageLike &#61; undefined&#59;" />
+<mutation declaredvars="x" numlines="1" error="Undefined is not supported in blocks" line0="let x: ImageLike = undefined;" />
 <next>
 <block type="ImageLike_setPixel">
 <value name="myImage">

@@ -2,7 +2,7 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation numlines="1" error="Unsupported statement in block&#58; StringLiteral" line0="&#34;abc&#34;" />
+<mutation numlines="1" error="Unsupported statement in block: StringLiteral" line0="&#34;abc&#34;" />
 <next>
 <block type="variables_set">
 <field name="VAR">a</field>
@@ -135,6 +135,6 @@
 </statement>
 </block>
 <comment h="120" w="220" data="0">
-let g &#61; parseInt&#40;&#34;42&#34;&#41;
+let g = parseInt(&#34;42&#34;)
 </comment>
 </xml>

@@ -2,10 +2,10 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation declaredvars="x" numlines="1" line0="let x &#61; 0" />
+<mutation declaredvars="x" numlines="1" line0="let x = 0" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="3" line0="for &#40;&#59;&#59;&#41; &#123;" line1="    x&#43;&#43;&#59;" line2="&#125;" />
+<mutation numlines="3" error="for loops must have an initializer, incrementor, and condition" line0="for (;;) {" line1="    x++;" line2="}" />
 </block>
 </next>
 </block>

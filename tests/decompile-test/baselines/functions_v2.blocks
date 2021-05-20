@@ -53,10 +53,10 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation declaredvars="x" numlines="1" error="Unsupported syntax kind for output expression block&#58; FunctionExpression" line0="let x &#61; function &#40;&#41; &#123;&#125;" />
+<mutation declaredvars="x" numlines="1" error="Unsupported syntax kind for output expression block: FunctionExpression" line0="let x = function () {}" />
 <next>
 <block type="typescript_statement">
-<mutation declaredvars="y" numlines="1" error="Unsupported syntax kind for output expression block&#58; FunctionExpression" line0="let y &#61; function expressionFunction&#40;&#41; &#123;&#125;" />
+<mutation declaredvars="y" numlines="1" error="Unsupported syntax kind for output expression block: FunctionExpression" line0="let y = function expressionFunction() {}" />
 <next>
 <block type="controls_if">
 <mutation elseif="0" else="0" />
@@ -67,7 +67,7 @@
 </value>
 <statement name="DO0">
 <block type="typescript_statement">
-<mutation numlines="3" error="Function declarations must be top level" line0="function scopedFunction&#40;&#41; &#123;" line1="" line2="    &#125;" />
+<mutation numlines="3" error="Function declarations must be top level" line0="function scopedFunction() {" line1="" line2="    }" />
 </block>
 </statement>
 </block>

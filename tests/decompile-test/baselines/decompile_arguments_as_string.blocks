@@ -2,7 +2,7 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="tilemap_editor">
-<field name="tilemap">tiles.createTilemap&#38;&#35;40&#59;null&#38;&#35;44&#59; 0&#38;&#35;44&#59; 8 &#38;&#35;42&#59;&#38;&#35;42&#59; 8&#38;&#35;44&#59; 9&#38;&#35;41&#59;</field>
+<field name="tilemap">tiles.createTilemap(null, 0, 8 ** 8, 9)</field>
 </block>
 </statement>
 </block>

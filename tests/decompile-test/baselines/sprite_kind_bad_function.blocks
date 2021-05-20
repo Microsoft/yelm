@@ -2,7 +2,7 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation numlines="7" error="Namespaces may only contain valid &#39;kind&#39; exports" line0="namespace SpriteKind &#123;" line1="    export const Rocket &#61; SpriteKind.create&#40;&#41;&#59;" line2="" line3="    export function hello&#40;&#41; &#123;" line4="" line5="    &#125;" line6="&#125;" />
+<mutation numlines="7" error="Namespaces may only contain valid &#39;kind&#39; exports" line0="namespace SpriteKind {" line1="    export const Rocket = SpriteKind.create();" line2="" line3="    export function hello() {" line4="" line5="    }" line6="}" />
 <next>
 <block type="variables_set">
 <field name="VAR">x</field>

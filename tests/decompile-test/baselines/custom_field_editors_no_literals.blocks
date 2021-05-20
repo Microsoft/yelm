@@ -16,10 +16,10 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation declaredvars="x" numlines="1" error="Field editor does not support literal arguments" line0="let x &#61; testNamespace.customShadowFieldNoLiterals&#40;11&#41;&#59;" />
+<mutation declaredvars="x" numlines="1" error="Field editor does not support literal arguments" line0="let x = testNamespace.customShadowFieldNoLiterals(11);" />
 <next>
 <block type="typescript_statement">
-<mutation declaredvars="y" numlines="1" error="Field editor does not support literal arguments" line0="let y &#61; testNamespace.customShadowFieldNoLiterals2&#40;&#34;goodbye&#34;&#41;&#59;" />
+<mutation declaredvars="y" numlines="1" error="Field editor does not support literal arguments" line0="let y = testNamespace.customShadowFieldNoLiterals2(&#34;goodbye&#34;);" />
 </block>
 </next>
 </block>

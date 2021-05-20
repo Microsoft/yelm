@@ -354,7 +354,7 @@
 </value>
 </block>
 </next>
-<comment pinned="false">c is already taken&#44; should become c2</comment>
+<comment pinned="false">c is already taken, should become c2</comment>
 </block>
 </next>
 </block>

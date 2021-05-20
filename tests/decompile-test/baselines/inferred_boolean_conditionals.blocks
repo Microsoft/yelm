@@ -16,7 +16,7 @@
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
 <block type="typescript_expression">
-<field name="EXPRESSION">testNamespace.inferredNumberOutput&#40;&#41;</field>
+<field name="EXPRESSION">testNamespace.inferredNumberOutput()</field>
 </block>
 </value>
 <statement name="DO0">

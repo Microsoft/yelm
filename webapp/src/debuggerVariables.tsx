@@ -14,6 +14,7 @@ interface ScopeVariables {
 interface Variable {
     name: string;
     value: any;
+    displayName?: string;
     id?: number;
     prevValue?: any;
     children?: Variable[];
@@ -148,13 +149,14 @@ export class DebuggerVariables extends data.Component<DebuggerVariablesProps, De
         vars.forEach(varInfo => {
             const valueString = renderValue(varInfo.value);
             const typeString = variableType(varInfo);
+            const displayName = varInfo.displayName || varInfo.name;
 
             result.push(<DebuggerTableRow key={varInfo.id}
                 describedBy={varInfo.id === previewed ? "debugger-preview" : undefined}
                 refID={varInfo.id}
                 icon={(varInfo.value && varInfo.value.hasFields) ? (varInfo.children ? "down triangle" : "right triangle") : undefined}
-                leftText={varInfo.name + ":"}
-                leftTitle={varInfo.name}
+                leftText={displayName + ":"}
+                leftTitle={displayName}
                 leftClass={varInfo.prevValue !== undefined ? "changed" : undefined}
                 rightText={truncateLength(valueString)}
                 rightTitle={shouldShowValueOnHover(typeString) ? valueString : undefined}
@@ -186,7 +188,16 @@ export class DebuggerVariables extends data.Component<DebuggerVariablesProps, De
 
         const updatedGlobals = updateScope(this.state.globalFrame, globals);
         if (filters) {
-            updatedGlobals.variables = updatedGlobals.variables.filter(v => filters.indexOf(v.name) !== -1)
+            updatedGlobals.variables = updatedGlobals.variables.reduce(
+                (acc, v) => {
+                    const matchingVar = filters.find(fv => pxtc.escapeIdentifier(pxt.blocks.escapePictographic(fv)) === v.name);
+                    if (matchingVar) {
+                        v.displayName = matchingVar;
+                        acc.push(v);
+                    }
+                    return acc;
+                }, [] as Variable[]
+            );
         }
         // inject unfiltered environment variables
         if (environmentGlobals)

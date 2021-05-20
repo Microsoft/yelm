@@ -23,7 +23,7 @@
 </value>
 <next>
 <block type="bc.Test_blockCombine_set">
-<field name="property">bc.Test.z&#64;set</field>
+<field name="property">bc.Test.z@set</field>
 <value name="bc">
 <block type="variables_get">
 <field name="VAR">bcTest</field>

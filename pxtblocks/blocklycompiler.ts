@@ -1129,9 +1129,25 @@ namespace pxt.blocks {
         return mkCallWithCallback(e, "basic", "forever", [], body);
     }
 
+    let PICTOGRAPHIC_REGEX: RegExp;
+    try { // Some browsers do not support unicode property escape, in which case we can just use _ replacement
+        PICTOGRAPHIC_REGEX = new RegExp("\\p{Extended_Pictographic}", "ug")
+    } catch {}
+    export function escapePictographic(name: string) {
+        if (PICTOGRAPHIC_REGEX) {
+            return name.replace(
+                PICTOGRAPHIC_REGEX,
+                s => `E${s.codePointAt(0).toString(16)}X`
+            );
+        }
+        return name;
+    }
+
     // convert to javascript friendly name
     export function escapeVarName(name: string, e: Environment, isFunction = false): string {
         if (!name) return '_';
+
+        name = escapePictographic(name);
 
         if (isFunction) {
             if (e.renames.oldToNewFunctions[name]) {
@@ -2253,6 +2269,8 @@ namespace pxt.blocks {
 
         function escapeVarName(originalName: string): string {
             if (!originalName) return '_';
+
+            originalName = escapePictographic(originalName);
 
             let n = ts.pxtc.escapeIdentifier(originalName);
 

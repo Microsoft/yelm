@@ -2,10 +2,10 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation numlines="1" error="for loop incrementors may only increment the variable declared in the initializer" line0="for &#40;let x &#61; 0&#59; x &#60;&#61; 5&#59; x&#43;&#61; 1&#41; &#123;&#125;" />
+<mutation numlines="1" error="for loop incrementors may only increment the variable declared in the initializer" line0="for (let x = 0; x &#60;= 5; x+= 1) {}" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="for loop incrementors may only increment the variable declared in the initializer" line0="for &#40;let x2 &#61; 0&#59; x2 &#60;&#61; 5&#59; x2--&#41; &#123;&#125;" />
+<mutation numlines="1" error="for loop incrementors may only increment the variable declared in the initializer" line0="for (let x2 = 0; x2 &#60;= 5; x2--) {}" />
 <next>
 <block type="variables_set">
 <field name="VAR">y</field>
@@ -16,10 +16,10 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="for loop incrementors may only increment the variable declared in the initializer" line0="for &#40;let x3 &#61; 0&#59; x3 &#60;&#61; 5&#59; y&#43;&#43;&#41; &#123;&#125;" />
+<mutation numlines="1" error="for loop incrementors may only increment the variable declared in the initializer" line0="for (let x3 = 0; x3 &#60;= 5; y++) {}" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="for loops must have an initializer&#44; incrementor&#44; and condition" line0="for &#40;let x4 &#61; 0&#59; x4 &#60;&#61; 5&#59;&#41; &#123;&#125;" />
+<mutation numlines="1" error="for loops must have an initializer, incrementor, and condition" line0="for (let x4 = 0; x4 &#60;= 5;) {}" />
 </block>
 </next>
 </block>

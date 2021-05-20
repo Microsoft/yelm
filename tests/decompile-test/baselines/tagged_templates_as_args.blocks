@@ -4,7 +4,7 @@
 <block type="nofieldeditor_template">
 <value name="img">
 <block type="typescript_expression">
-<field name="EXPRESSION">img&#96;1234&#96;</field>
+<field name="EXPRESSION">img`1234`</field>
 </block>
 </value>
 <next>
@@ -12,7 +12,7 @@
 <value name="img">
 <shadow type="imageeditor"/>
 <block type="typescript_expression">
-<field name="EXPRESSION">img&#96;1234&#96;</field>
+<field name="EXPRESSION">img`1234`</field>
 </block>
 </value>
 <next>

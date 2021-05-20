@@ -1026,7 +1026,7 @@ export class Editor extends toolboxeditor.ToolboxEditor {
 
         if (this.debuggerToolbox) {
             const visibleVars = Blockly.Variables.allUsedVarModels(this.editor)
-                    .map((variable: Blockly.VariableModel) => pxtc.escapeIdentifier(variable.name));
+                    .map((variable: Blockly.VariableModel) => variable.name);
 
             this.debuggerToolbox.setBreakpoint(brk, visibleVars);
         }

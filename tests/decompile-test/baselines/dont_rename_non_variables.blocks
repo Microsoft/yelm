@@ -2,16 +2,16 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation numlines="4" line0="interface Foo &#123;" line1="    a&#58; number" line2="    b?&#58; number" line3="&#125;" />
+<mutation numlines="4" error="Unsupported statement in block: InterfaceDeclaration" line0="interface Foo {" line1="    a: number" line2="    b?: number" line3="}" />
 <next>
 <block type="typescript_statement">
-<mutation declaredvars="x" numlines="1" line0="let x&#58; Foo &#61; &#123; a&#58; 1&#44; b&#58; 2 &#125;" />
+<mutation declaredvars="x" numlines="1" error="Unsupported syntax kind for output expression block: ObjectLiteralExpression" line0="let x: Foo = { a: 1, b: 2 }" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" line0="bar&#40;x&#41;" />
+<mutation numlines="1" error="Call statements must have a valid declared function" line0="bar(x)" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="3" line0="function bar&#40;y&#58; Foo&#41; &#123;" line1="    let z &#61; y.a" line2="&#125;" />
+<mutation numlines="3" error="Only types that can be added in blocks can be used for function arguments" line0="function bar(y: Foo) {" line1="    let z = y.a" line2="}" />
 </block>
 </next>
 </block>

@@ -2,13 +2,13 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation declaredvars="two" numlines="1" line0="let two &#61; 0" />
+<mutation declaredvars="two" numlines="1" line0="let two = 0" />
 <next>
 <block type="typescript_statement">
-<mutation declaredvars="one" numlines="1" line0="let one &#61; 0" />
+<mutation declaredvars="one" numlines="1" line0="let one = 0" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" line0="one &#38;&#61; two" />
+<mutation numlines="1" error="Unsupported operator token in statement AmpersandEqualsToken" line0="one &#38;= two" />
 </block>
 </next>
 </block>

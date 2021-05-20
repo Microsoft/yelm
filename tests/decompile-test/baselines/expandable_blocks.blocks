@@ -61,7 +61,7 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Function call has more arguments than are supported by its block" line0="expandable.optionalSubset&#40;&#34;that is good&#34;&#44; 180&#44; true&#44; Direction.Right&#41;&#59;" />
+<mutation numlines="1" error="Function call has more arguments than are supported by its block" line0="expandable.optionalSubset(&#34;that is good&#34;, 180, true, Direction.Right);" />
 </block>
 </next>
 </block>

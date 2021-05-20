@@ -4,17 +4,17 @@
 </statement>
 </block>
 <block type="test_object_destructuring">
-<mutation callbackproperties="" renamemap="&#123;&#125;" />
+<mutation callbackproperties="" renamemap="{}" />
 <statement name="HANDLER">
 </statement>
 </block>
 <block type="test_object_destructuring">
-<mutation callbackproperties="n" renamemap="&#123;&#125;" />
+<mutation callbackproperties="n" renamemap="{}" />
 <statement name="HANDLER">
 </statement>
 </block>
 <block type="test_object_destructuring">
-<mutation callbackproperties="n,text" renamemap="&#123;&#34;text&#34;&#58;&#34;data&#34;&#125;" />
+<mutation callbackproperties="n,text" renamemap="{&#34;text&#34;:&#34;data&#34;}" />
 <statement name="HANDLER">
 </statement>
 </block>

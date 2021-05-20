@@ -27,7 +27,7 @@
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
 <block type="typescript_expression">
-<field name="EXPRESSION">testNamespace.stringArgumentOutput&#40;&#34;&#34;&#41;</field>
+<field name="EXPRESSION">testNamespace.stringArgumentOutput(&#34;&#34;)</field>
 </block>
 </value>
 <statement name="DO0">
@@ -37,7 +37,7 @@
 <value name="COND">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
 <block type="typescript_expression">
-<field name="EXPRESSION">&#40;&#40;&#40;&#40;&#40;&#40;&#40;&#40;1&#41;&#41;&#41;&#41;&#41;&#41;&#41;&#41;</field>
+<field name="EXPRESSION">((((((((1))))))))</field>
 </block>
 </value>
 <statement name="DO">
@@ -48,7 +48,7 @@
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
 <block type="typescript_expression">
-<field name="EXPRESSION">&#40;&#40;&#40;&#40;&#40;&#40;&#40;&#40;testNamespace.stringArgumentOutput&#40;&#34;&#34;&#41;&#41;&#41;&#41;&#41;&#41;&#41;&#41;&#41;</field>
+<field name="EXPRESSION">((((((((testNamespace.stringArgumentOutput(&#34;&#34;)))))))))</field>
 </block>
 </value>
 <statement name="DO0">
@@ -319,7 +319,7 @@
 <value name="B">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
 <block type="typescript_expression">
-<field name="EXPRESSION">1 &#124; 2</field>
+<field name="EXPRESSION">1 | 2</field>
 </block>
 </value>
 </block>

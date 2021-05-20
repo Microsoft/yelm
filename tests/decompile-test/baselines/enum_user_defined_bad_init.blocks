@@ -2,10 +2,10 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation numlines="5" error="Invalid initializer for enum member" line0="enum PlainOldEnum &#123;" line1="    G &#61; 9 &#42; 9&#44;" line2="    H&#44;" line3="    I" line4="&#125;" />
+<mutation numlines="5" error="Invalid initializer for enum member" line0="enum PlainOldEnum {" line1="    G = 9 * 9," line2="    H," line3="    I" line4="}" />
 <next>
 <block type="typescript_statement">
-<mutation declaredvars="userDefinedTest3" numlines="1" error="Enum value without a corresponding block" line0="let userDefinedTest3 &#61; PlainOldEnum.G" />
+<mutation declaredvars="userDefinedTest3" numlines="1" error="Enum value without a corresponding block" line0="let userDefinedTest3 = PlainOldEnum.G" />
 </block>
 </next>
 </block>

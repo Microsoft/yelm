@@ -2,7 +2,7 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation declaredvars="x" numlines="1" line0="let x&#58; number&#59;" />
+<mutation declaredvars="x" numlines="1" error="Variable declarations must have an initializer" line0="let x: number;" />
 </block>
 </statement>
 </block>

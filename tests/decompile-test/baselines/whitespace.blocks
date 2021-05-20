@@ -2,19 +2,19 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation declaredvars="x" numlines="1" line0="let x &#61; &#34;&#92;r&#34;" />
+<mutation declaredvars="x" numlines="1" error="Only whitespace character allowed in string literals is space" line0="let x = &#34;\r&#34;" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" line0="x &#61; &#34;hello&#92;n&#34;" />
+<mutation numlines="1" error="Only whitespace character allowed in string literals is space" line0="x = &#34;hello\n&#34;" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" line0="x &#61; &#34;&#92;tgoodbye&#34;" />
+<mutation numlines="1" error="Only whitespace character allowed in string literals is space" line0="x = &#34;\tgoodbye&#34;" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" line0="x &#61; &#34;&#92;f&#34;" />
+<mutation numlines="1" error="Only whitespace character allowed in string literals is space" line0="x = &#34;\f&#34;" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" line0="x &#61; &#34;&#92;v&#34;" />
+<mutation numlines="1" error="Only whitespace character allowed in string literals is space" line0="x = &#34;\v&#34;" />
 <next>
 <block type="variables_set">
 <field name="VAR">x</field>

@@ -6,7 +6,7 @@
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
 <block type="spritescreate">
-<field name="img">img&#38;&#35;96&#59;0123&#38;&#35;96&#59;</field>
+<field name="img">img`0123`</field>
 </block>
 </value>
 <next>
@@ -15,12 +15,12 @@
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
 <block type="spritescreate">
-<field name="img">img&#38;&#35;96&#59;&#38;&#35;10&#59;0&#38;&#35;10&#59;&#38;&#35;10&#59;&#38;&#35;10&#59;1&#38;&#35;10&#59;2&#38;&#35;10&#59;3&#38;&#35;96&#59;</field>
+<field name="img">img`&#38;#10;0&#38;#10;&#38;#10;&#38;#10;1&#38;#10;2&#38;#10;3`</field>
 </block>
 </value>
 <next>
 <block type="typescript_statement">
-<mutation declaredvars="bad_template" numlines="1" error="Function only supports template literals with tag &#39;img&#39;" line0="let bad_template &#61; template.create&#40;badt&#96;0123&#96;&#41;" />
+<mutation declaredvars="bad_template" numlines="1" error="Function only supports template literals with tag &#39;img&#39;" line0="let bad_template = template.create(badt`0123`)" />
 </block>
 </next>
 </block>

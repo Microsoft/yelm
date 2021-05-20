@@ -10,19 +10,19 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="left side of for loop conditional must be the variable declared in the initializer" line0="for &#40;let x &#61; 0&#59; y &#60;&#61; 5&#59; x&#43;&#43;&#41; &#123;&#125;" />
+<mutation numlines="1" error="left side of for loop conditional must be the variable declared in the initializer" line0="for (let x = 0; y &#60;= 5; x++) {}" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="for loop conditionals must be binary comparison operations" line0="for &#40;let x2 &#61; 0&#59; false&#59; x2&#43;&#43;&#41; &#123;&#125;" />
+<mutation numlines="1" error="for loop conditionals must be binary comparison operations" line0="for (let x2 = 0; false; x2++) {}" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="for loop conditional operator must be either &#60; or &#60;&#61;" line0="for &#40;let x3 &#61; 0&#59; x3 &#61;&#61; 2&#59; x3&#43;&#43;&#41; &#123;&#125;" />
+<mutation numlines="1" error="for loop conditional operator must be either &#60; or &#60;=" line0="for (let x3 = 0; x3 == 2; x3++) {}" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="left side of for loop conditional must be the variable declared in the initializer" line0="for &#40;let x4 &#61; 0&#59; 2 &#60;&#61; 2&#59; x4&#43;&#43;&#41; &#123;&#125;" />
+<mutation numlines="1" error="left side of for loop conditional must be the variable declared in the initializer" line0="for (let x4 = 0; 2 &#60;= 2; x4++) {}" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="for loops must have an initializer&#44; incrementor&#44; and condition" line0="for &#40;let x5 &#61; 0&#59; &#59; x5&#43;&#43;&#41; &#123;&#125;" />
+<mutation numlines="1" error="for loops must have an initializer, incrementor, and condition" line0="for (let x5 = 0; ; x5++) {}" />
 </block>
 </next>
 </block>

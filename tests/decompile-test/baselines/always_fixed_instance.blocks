@@ -2,7 +2,7 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation declaredvars="a" numlines="1" error="No call info found" line0="let a &#61; pins.A9" />
+<mutation declaredvars="a" numlines="1" error="No call info found" line0="let a = pins.A9" />
 <next>
 <block type="pin_analog_pitch">
 <field name="pin">pins.A10</field>

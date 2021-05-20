@@ -15,7 +15,7 @@
 </value>
 <statement name="DO">
 <block type="typescript_statement">
-<mutation numlines="1" error="Enum arguments may only be literal property access expressions" line0="testNamespace.enumArgument&#40;i&#41;&#59;" />
+<mutation numlines="1" error="Enum arguments may only be literal property access expressions" line0="testNamespace.enumArgument(i);" />
 </block>
 </statement>
 </block>

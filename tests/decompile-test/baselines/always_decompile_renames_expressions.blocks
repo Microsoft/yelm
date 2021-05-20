@@ -25,7 +25,7 @@
 <value name="A">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
 <block type="typescript_expression">
-<field name="EXPRESSION">&#40;x2 &#38; 7&#41;</field>
+<field name="EXPRESSION">(x2 &#38; 7)</field>
 </block>
 </value>
 <value name="B">

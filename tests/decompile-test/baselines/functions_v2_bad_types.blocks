@@ -2,10 +2,10 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation numlines="3" error="Only types that can be added in blocks can be used for function arguments" line0="function hasNumberArray&#40;a&#58; boolean&#44; b&#58; number&#91;&#93;&#41; &#123;" line1="" line2="&#125;" />
+<mutation numlines="3" error="Only types that can be added in blocks can be used for function arguments" line0="function hasNumberArray(a: boolean, b: number[]) {" line1="" line2="}" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Call statements must have a valid declared function" line0="hasNumberArray&#40;true&#44; &#91;&#93;&#41;&#59;" />
+<mutation numlines="1" error="Call statements must have a valid declared function" line0="hasNumberArray(true, []);" />
 </block>
 </next>
 </block>

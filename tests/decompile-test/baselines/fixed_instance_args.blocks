@@ -5,10 +5,10 @@
 <field name="p">pins2.A3</field>
 <next>
 <block type="typescript_statement">
-<mutation declaredvars="___x" numlines="1" error="No call info found" line0="let ___x&#58; PwmPin &#61; pins2.A5&#59;" />
+<mutation declaredvars="___x" numlines="1" error="No call info found" line0="let ___x: PwmPin = pins2.A5;" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Arguments of a fixed instance type must be a reference to a fixed instance declaration" line0="pins2.fixedInstanceArg&#40;___x&#41;&#59;" />
+<mutation numlines="1" error="Arguments of a fixed instance type must be a reference to a fixed instance declaration" line0="pins2.fixedInstanceArg(___x);" />
 </block>
 </next>
 </block>

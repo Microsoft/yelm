@@ -9,10 +9,10 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Predicates must be inline expressions that return a value" line0="pauseUntil&#40;&#40;&#41; &#61;&#62; true&#44; 500&#41;" />
+<mutation numlines="1" error="Predicates must be inline expressions that return a value" line0="pauseUntil(() =&#62; true, 500)" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Predicates must be inline expressions that return a value" line0="pauseUntil&#40;undefined&#41;&#59;" />
+<mutation numlines="1" error="Predicates must be inline expressions that return a value" line0="pauseUntil(undefined);" />
 <next>
 <block type="pxt_pause_until">
 <value name="PREDICATE">
@@ -22,7 +22,7 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Predicates must be inline expressions that return a value" line0="pauseUntil&#40;function&#40;&#41; &#123; let x &#61; 0&#59; return x &#62; 7 &#125;&#41;&#59;" />
+<mutation numlines="1" error="Predicates must be inline expressions that return a value" line0="pauseUntil(function() { let x = 0; return x &#62; 7 });" />
 </block>
 </next>
 </block>

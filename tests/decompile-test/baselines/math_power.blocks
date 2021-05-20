@@ -1,62 +1,62 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-    <block type="pxt-on-start">
-    <statement name="HANDLER">
-    <block type="variables_set">
-    <field name="VAR">power</field>
-    <value name="VALUE">
-    <shadow type="math_number"><field name="NUM">0</field></shadow>
-    <block type="math_arithmetic">
-    <field name="OP">POWER</field>
-    <value name="A">
-    <shadow type="math_number">
-    <field name="NUM">2</field>
-    </shadow>
-    </value>
-    <value name="B">
-    <shadow type="math_number">
-    <field name="NUM">2</field>
-    </shadow>
-    </value>
-    </block>
-    </value>
-    <next>
-    <block type="variables_set">
-    <field name="VAR">power2</field>
-    <value name="VALUE">
-    <shadow type="math_number"><field name="NUM">0</field></shadow>
-    <block type="math_arithmetic">
-    <field name="OP">POWER</field>
-    <value name="A">
-    <shadow type="math_number">
-    <field name="NUM">3</field>
-    </shadow>
-    </value>
-    <value name="B">
-    <shadow type="math_number"><field name="NUM">0</field></shadow>
-    <block type="math_arithmetic">
-    <field name="OP">ADD</field>
-    <value name="A">
-    <shadow type="math_number">
-    <field name="NUM">3</field>
-    </shadow>
-    </value>
-    <value name="B">
-    <shadow type="math_number">
-    <field name="NUM">3</field>
-    </shadow>
-    </value>
-    </block>
-    </value>
-    </block>
-    </value>
-    <next>
-    <block type="typescript_statement">
-    <mutation numlines="1" error="No output expressions as statements" line0="Math.pow&#40;4&#44; 4&#41;&#59;" />
-    </block>
-    </next>
-    </block>
-    </next>
-    </block>
-    </statement>
-    </block>
-    </xml>
+<block type="pxt-on-start">
+<statement name="HANDLER">
+<block type="variables_set">
+<field name="VAR">power</field>
+<value name="VALUE">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="math_arithmetic">
+<field name="OP">POWER</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">2</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number">
+<field name="NUM">2</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="variables_set">
+<field name="VAR">power2</field>
+<value name="VALUE">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="math_arithmetic">
+<field name="OP">POWER</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">3</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="math_arithmetic">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">3</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number">
+<field name="NUM">3</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="typescript_statement">
+<mutation numlines="1" error="No output expressions as statements" line0="Math.pow(4, 4);" />
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</xml>

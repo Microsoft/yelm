@@ -2,7 +2,7 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation numlines="1" error="Enum arguments may only be literal property access expressions" line0="testNamespace.enumArgument&#40;testNamespace.numberArgumentOutput&#40;0&#41;&#41;&#59;" />
+<mutation numlines="1" error="Enum arguments may only be literal property access expressions" line0="testNamespace.enumArgument(testNamespace.numberArgumentOutput(0));" />
 </block>
 </statement>
 </block>

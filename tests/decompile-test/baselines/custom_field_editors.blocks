@@ -19,7 +19,7 @@
 <block type="test_customFieldEditorWithMutation">
 <value name="value">
 <shadow type="test_customShadowField">
-<mutation customfield="&#123;&#34;test&#34;&#58;&#34;0&#34;&#125;" />
+<mutation customfield="{&#34;test&#34;:&#34;0&#34;}" />
 <field name="value">100</field>
 </shadow>
 </value>

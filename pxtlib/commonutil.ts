@@ -28,8 +28,8 @@ namespace ts.pxtc.Util {
     }
 
     export function htmlEscape(_input: string) {
-        if (!_input) return _input; // null, undefined, empty string test
-        return _input.replace(/([^\w .!?\-$])/g, c => "&#" + c.charCodeAt(0) + ";");
+        if (!_input) return _input;
+        return _input.replace(/[<>&"'\n]/gu, c => `&#${c.charCodeAt(0)};`);
     }
 
     export function htmlUnescape(_input: string) {

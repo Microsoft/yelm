@@ -2,16 +2,16 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation numlines="1" error="Function call has more arguments than are supported by its block" line0="testNamespace.defaultArguments&#40;40&#44; 50&#41;&#59;" />
+<mutation numlines="1" error="Function call has more arguments than are supported by its block" line0="testNamespace.defaultArguments(40, 50);" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Function call has more arguments than are supported by its block" line0="testNamespace.multipleDefaultArguments&#40;40&#44; 50&#41;&#59;" />
+<mutation numlines="1" error="Function call has more arguments than are supported by its block" line0="testNamespace.multipleDefaultArguments(40, 50);" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Function call has more arguments than are supported by its block" line0="testNamespace.optionalArgument&#40;40&#44; 50&#41;&#59;" />
+<mutation numlines="1" error="Function call has more arguments than are supported by its block" line0="testNamespace.optionalArgument(40, 50);" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Function call has more arguments than are supported by its block" line0="testNamespace.optionalArgumentWithCallback&#40;&#40;&#41; &#61;&#62; &#123;&#125;&#44; 500&#41;&#59;" />
+<mutation numlines="1" error="Function call has more arguments than are supported by its block" line0="testNamespace.optionalArgumentWithCallback(() =&#62; {}, 500);" />
 </block>
 </next>
 </block>

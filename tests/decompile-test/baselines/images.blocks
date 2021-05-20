@@ -2,14 +2,14 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="device_show_leds">
-<field name="LEDS">&#96;.....&#10;.&#35;.&#35;.&#10;.....&#10;&#35;...&#35;&#10;.&#35;&#35;&#35;.&#10;&#96;</field>
+<field name="LEDS">`.....&#10;.#.#.&#10;.....&#10;#...#&#10;.###.&#10;`</field>
 <next>
 <block type="variables_set">
 <field name="VAR">x</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
 <block type="device_build_image">
-<field name="LEDS">&#96;.....&#10;.&#35;.&#35;.&#10;.....&#10;.&#35;&#35;&#35;.&#10;&#35;...&#35;&#10;&#96;</field>
+<field name="LEDS">`.....&#10;.#.#.&#10;.....&#10;.###.&#10;#...#&#10;`</field>
 </block>
 </value>
 <next>
@@ -18,7 +18,7 @@
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
 <block type="device_build_big_image">
-<field name="LEDS">&#96;..........&#10;.&#35;&#35;&#35;..&#35;&#35;&#35;.&#10;.&#35;.&#35;..&#35;.&#35;.&#10;.&#35;&#35;&#35;..&#35;&#35;&#35;.&#10;..........&#10;&#96;</field>
+<field name="LEDS">`..........&#10;.###..###.&#10;.#.#..#.#.&#10;.###..###.&#10;..........&#10;`</field>
 </block>
 </value>
 <next>
@@ -27,7 +27,7 @@
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
 <block type="device_build_image">
-<field name="LEDS">&#96;...&#10;.&#35;.&#10;...&#10;.&#35;&#35;&#10;&#96;</field>
+<field name="LEDS">`...&#10;.#.&#10;...&#10;.##&#10;`</field>
 </block>
 </value>
 <next>
@@ -36,7 +36,7 @@
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
 <block type="device_build_image">
-<field name="LEDS">&#96;.....&#35;&#10;.&#35;.&#35;.&#35;&#10;......&#10;.&#35;&#35;&#35;.&#35;&#10;&#96;</field>
+<field name="LEDS">`.....#&#10;.#.#.#&#10;......&#10;.###.#&#10;`</field>
 </block>
 </value>
 </block>

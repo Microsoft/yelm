@@ -2,22 +2,22 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation numlines="1" line0="0 &#43; 0" />
+<mutation numlines="1" error="This expression cannot be assigned to" line0="0 + 0" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" line0="0 - 0" />
+<mutation numlines="1" error="This expression cannot be assigned to" line0="0 - 0" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" line0="0 &#42; 0" />
+<mutation numlines="1" error="This expression cannot be assigned to" line0="0 * 0" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" line0="0 &#47; 0" />
+<mutation numlines="1" error="This expression cannot be assigned to" line0="0 / 0" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" line0="0 &#37; 1" />
+<mutation numlines="1" error="This expression cannot be assigned to" line0="0 % 1" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" line0="0" />
+<mutation numlines="1" error="Unsupported statement in block: FirstLiteralToken" line0="0" />
 <next>
 <block type="variables_set">
 <field name="VAR">x</field>

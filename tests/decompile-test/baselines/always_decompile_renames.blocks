@@ -2,10 +2,10 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation declaredvars="someVar" numlines="1" line0="let someVar &#61; 0 &#38; 9&#59;" />
+<mutation declaredvars="someVar" numlines="1" error="Could not find operator &#38;" line0="let someVar = 0 &#38; 9;" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="5" line0="for &#40;&#59;&#59;&#41; &#123;" line1="    let someVar2 &#61; 38&#59;" line2="    someVar2 &#43;&#43;&#59;" line3="    someVar2 &#61; 7 &#94; 6&#59;" line4="&#125;" />
+<mutation numlines="5" error="for loops must have an initializer, incrementor, and condition" line0="for (;;) {" line1="    let someVar2 = 38;" line2="    someVar2 ++;" line3="    someVar2 = 7 ^ 6;" line4="}" />
 </block>
 </next>
 </block>

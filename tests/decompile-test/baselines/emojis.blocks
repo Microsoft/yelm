@@ -1,0 +1,77 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+<block type="function_definition">
+<mutation name="📖" >
+</mutation>
+<statement name="STACK">
+</statement>
+</block>
+<block type="function_definition">
+<mutation name="👩‍❤️‍💋‍👩" >
+</mutation>
+<statement name="STACK">
+</statement>
+</block>
+<block type="function_definition">
+<mutation name="📚" >
+</mutation>
+<statement name="STACK">
+</statement>
+</block>
+<block type="pxt-on-start">
+<statement name="HANDLER">
+<block type="function_call">
+<mutation name="📚" />
+<next>
+<block type="function_call">
+<mutation name="📖" />
+<next>
+<block type="function_call">
+<mutation name="👩‍❤️‍💋‍👩" />
+<next>
+<block type="variables_set">
+<field name="VAR">a</field>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">10</field>
+</shadow>
+</value>
+<next>
+<block type="variables_set">
+<field name="VAR">😃</field>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">2</field>
+</shadow>
+</value>
+<next>
+<block type="variables_change">
+<field name="VAR">😃</field>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">28</field>
+</shadow>
+</value>
+<next>
+<block type="test_number_with_enum_shadow">
+<value name="arg1">
+<shadow type="test_enum_value"/>
+<block type="variables_get">
+<field name="VAR">😃</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</xml>

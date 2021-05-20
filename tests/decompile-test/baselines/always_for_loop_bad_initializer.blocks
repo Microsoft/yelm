@@ -10,7 +10,7 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="only variable declarations are permitted in for loop initializers" line0="for &#40;1 &#43; 1&#59; x &#60;&#61; 5&#59; x&#43;&#43;&#41; &#123;&#125;" />
+<mutation numlines="1" error="only variable declarations are permitted in for loop initializers" line0="for (1 + 1; x &#60;= 5; x++) {}" />
 <next>
 <block type="variables_set">
 <field name="VAR">x2</field>
@@ -21,10 +21,10 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="for loops must have an initializer&#44; incrementor&#44; and condition" line0="for &#40;&#59; x2 &#60;&#61; 5&#59; x2&#43;&#43;&#41; &#123;&#125;" />
+<mutation numlines="1" error="for loops must have an initializer, incrementor, and condition" line0="for (; x2 &#60;= 5; x2++) {}" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="for loop with multiple variables not supported" line0="for &#40;let x3 &#61; 0&#44; y &#61; 2&#59; x3 &#60;&#61; 5&#59; x3&#43;&#43;&#41; &#123;&#125;" />
+<mutation numlines="1" error="for loop with multiple variables not supported" line0="for (let x3 = 0, y = 2; x3 &#60;= 5; x3++) {}" />
 </block>
 </next>
 </block>

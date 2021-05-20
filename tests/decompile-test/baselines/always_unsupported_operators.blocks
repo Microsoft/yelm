@@ -2,22 +2,22 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation declaredvars="x" numlines="1" error="Could not find operator &#60;&#60;" line0="let x &#61; 0 &#60;&#60; 1&#59;" />
+<mutation declaredvars="x" numlines="1" error="Could not find operator &#60;&#60;" line0="let x = 0 &#60;&#60; 1;" />
 <next>
 <block type="typescript_statement">
-<mutation declaredvars="x2" numlines="1" error="Could not find operator &#62;&#62;" line0="let x2 &#61; 0 &#62;&#62; 1&#59;" />
+<mutation declaredvars="x2" numlines="1" error="Could not find operator &#62;&#62;" line0="let x2 = 0 &#62;&#62; 1;" />
 <next>
 <block type="typescript_statement">
-<mutation declaredvars="x3" numlines="1" error="Could not find operator &#62;&#62;&#62;" line0="let x3 &#61; 0 &#62;&#62;&#62; 1&#59;" />
+<mutation declaredvars="x3" numlines="1" error="Could not find operator &#62;&#62;&#62;" line0="let x3 = 0 &#62;&#62;&#62; 1;" />
 <next>
 <block type="typescript_statement">
-<mutation declaredvars="x4" numlines="1" error="Could not find operator &#124;" line0="let x4 &#61; 0 &#124; 1&#59;" />
+<mutation declaredvars="x4" numlines="1" error="Could not find operator |" line0="let x4 = 0 | 1;" />
 <next>
 <block type="typescript_statement">
-<mutation declaredvars="x5" numlines="1" error="Could not find operator &#38;" line0="let x5 &#61; 0 &#38; 1&#59;" />
+<mutation declaredvars="x5" numlines="1" error="Could not find operator &#38;" line0="let x5 = 0 &#38; 1;" />
 <next>
 <block type="typescript_statement">
-<mutation declaredvars="x6" numlines="1" error="Could not find operator &#94;" line0="let x6 &#61; 0 &#94; 1&#59;" />
+<mutation declaredvars="x6" numlines="1" error="Could not find operator ^" line0="let x6 = 0 ^ 1;" />
 <next>
 <block type="variables_set">
 <field name="VAR">x7</field>
@@ -28,7 +28,7 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Unsupported operator token in statement AsteriskEqualsToken" line0="x7 &#42;&#61; 1&#59;" />
+<mutation numlines="1" error="Unsupported operator token in statement AsteriskEqualsToken" line0="x7 *= 1;" />
 <next>
 <block type="variables_set">
 <field name="VAR">x8</field>
@@ -39,7 +39,7 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Unsupported operator token in statement SlashEqualsToken" line0="x8 &#47;&#61; 1&#59;" />
+<mutation numlines="1" error="Unsupported operator token in statement SlashEqualsToken" line0="x8 /= 1;" />
 <next>
 <block type="variables_set">
 <field name="VAR">x9</field>
@@ -50,7 +50,7 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Unsupported operator token in statement PercentEqualsToken" line0="x9 &#37;&#61; 1&#59;" />
+<mutation numlines="1" error="Unsupported operator token in statement PercentEqualsToken" line0="x9 %= 1;" />
 <next>
 <block type="variables_set">
 <field name="VAR">x10</field>
@@ -61,7 +61,7 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Unsupported operator token in statement BarEqualsToken" line0="x10 &#124;&#61; 1&#59;" />
+<mutation numlines="1" error="Unsupported operator token in statement BarEqualsToken" line0="x10 |= 1;" />
 <next>
 <block type="variables_set">
 <field name="VAR">x11</field>
@@ -72,7 +72,7 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Unsupported operator token in statement AmpersandEqualsToken" line0="x11 &#38;&#61; 1&#59;" />
+<mutation numlines="1" error="Unsupported operator token in statement AmpersandEqualsToken" line0="x11 &#38;= 1;" />
 <next>
 <block type="variables_set">
 <field name="VAR">x12</field>
@@ -83,7 +83,7 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Unsupported operator token in statement LastBinaryOperator" line0="x12 &#94;&#61; 1&#59;" />
+<mutation numlines="1" error="Unsupported operator token in statement LastBinaryOperator" line0="x12 ^= 1;" />
 <next>
 <block type="variables_set">
 <field name="VAR">x13</field>
@@ -94,7 +94,7 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Unsupported operator token in statement LessThanLessThanEqualsToken" line0="x13 &#60;&#60;&#61; 1&#59;" />
+<mutation numlines="1" error="Unsupported operator token in statement LessThanLessThanEqualsToken" line0="x13 &#60;&#60;= 1;" />
 <next>
 <block type="variables_set">
 <field name="VAR">x14</field>
@@ -105,7 +105,7 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Unsupported operator token in statement GreaterThanGreaterThanEqualsToken" line0="x14 &#62;&#62;&#61; 1&#59;" />
+<mutation numlines="1" error="Unsupported operator token in statement GreaterThanGreaterThanEqualsToken" line0="x14 &#62;&#62;= 1;" />
 <next>
 <block type="variables_set">
 <field name="VAR">x15</field>
@@ -116,7 +116,7 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Unsupported operator token in statement GreaterThanGreaterThanGreaterThanEqualsToken" line0="x15 &#62;&#62;&#62;&#61; 1&#59;" />
+<mutation numlines="1" error="Unsupported operator token in statement GreaterThanGreaterThanGreaterThanEqualsToken" line0="x15 &#62;&#62;&#62;= 1;" />
 </block>
 </next>
 </block>

@@ -11,7 +11,7 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Unsupported statement in block&#58; TaggedTemplateExpression" line0="withID&#96;1234&#96;&#59;" />
+<mutation numlines="1" error="Unsupported statement in block: TaggedTemplateExpression" line0="withID`1234`;" />
 </block>
 </next>
 </block>

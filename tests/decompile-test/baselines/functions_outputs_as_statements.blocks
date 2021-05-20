@@ -2,25 +2,25 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation numlines="1" error="No output expressions as statements" line0="testNamespace.noArgumentOutput&#40;&#41;" />
+<mutation numlines="1" error="No output expressions as statements" line0="testNamespace.noArgumentOutput()" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="No output expressions as statements" line0="testNamespace.booleanArgumentOutput&#40;true&#41;" />
+<mutation numlines="1" error="No output expressions as statements" line0="testNamespace.booleanArgumentOutput(true)" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="No output expressions as statements" line0="testNamespace.numberArgumentOutput&#40;5&#41;" />
+<mutation numlines="1" error="No output expressions as statements" line0="testNamespace.numberArgumentOutput(5)" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="No output expressions as statements" line0="testNamespace.stringArgumentOutput&#40;&#34;okay&#34;&#41;" />
+<mutation numlines="1" error="No output expressions as statements" line0="testNamespace.stringArgumentOutput(&#34;okay&#34;)" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="No output expressions as statements" line0="testNamespace.enumArgumentOutput&#40;TestEnum.testValue1&#41;" />
+<mutation numlines="1" error="No output expressions as statements" line0="testNamespace.enumArgumentOutput(TestEnum.testValue1)" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="No output expressions as statements" line0="testNamespace.enumFunctionArgumentOutput&#40;EnumWithValueBlock.testValue2&#41;" />
+<mutation numlines="1" error="No output expressions as statements" line0="testNamespace.enumFunctionArgumentOutput(EnumWithValueBlock.testValue2)" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="No output expressions as statements" line0="testNamespace.multipleArgumentsOutput&#40;2&#44; false&#41;" />
+<mutation numlines="1" error="No output expressions as statements" line0="testNamespace.multipleArgumentsOutput(2, false)" />
 </block>
 </next>
 </block>

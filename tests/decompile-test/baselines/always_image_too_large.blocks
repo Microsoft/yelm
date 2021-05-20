@@ -2,10 +2,10 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation declaredvars="item" numlines="7" error="Invalid image pattern &#40;50 expected vs 75 actual&#41;" line0="let item &#61; images.createBigImage&#40;&#96;" line1="    . . . . .   . . . . .   . . . . ." line2="    . &#35; &#35; &#35; .   . &#35; &#35; &#35; .   . &#35; &#35; &#35; ." line3="    . &#35; . &#35; .   . &#35; . &#35; .   . &#35; . &#35; ." line4="    . &#35; &#35; &#35; .   . &#35; &#35; &#35; .   . &#35; &#35; &#35; ." line5="    . . . . .   . . . . .   . . . . ." line6="    &#96;&#41;" />
+<mutation declaredvars="item" numlines="7" error="Invalid image pattern (50 expected vs 75 actual)" line0="let item = images.createBigImage(`" line1="    . . . . .   . . . . .   . . . . ." line2="    . # # # .   . # # # .   . # # # ." line3="    . # . # .   . # . # .   . # . # ." line4="    . # # # .   . # # # .   . # # # ." line5="    . . . . .   . . . . .   . . . . ." line6="    `)" />
 <next>
 <block type="typescript_statement">
-<mutation declaredvars="z" numlines="7" error="Invalid image pattern &#40;50 expected vs 10 actual&#41;" line0="let z &#61; images.createBigImage&#40;&#96;" line1="    . ." line2="    . &#35;" line3="    . &#35;" line4="    . &#35;" line5="    . ." line6="    &#96;&#41;" />
+<mutation declaredvars="z" numlines="7" error="Invalid image pattern (50 expected vs 10 actual)" line0="let z = images.createBigImage(`" line1="    . ." line2="    . #" line3="    . #" line4="    . #" line5="    . ." line6="    `)" />
 </block>
 </next>
 </block>

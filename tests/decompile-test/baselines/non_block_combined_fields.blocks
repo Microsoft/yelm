@@ -10,7 +10,7 @@
 </value>
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="No call info found" line0="a.data &#61; 5&#59;" />
+<mutation numlines="1" error="No call info found" line0="a.data = 5;" />
 <next>
 <block type="device_show_number">
 <value name="number">

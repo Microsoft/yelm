@@ -5,22 +5,22 @@
 <mutation numlines="1" error="This expression cannot be assigned to" line0="false &#38;&#38; false" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="This expression cannot be assigned to" line0="false &#124;&#124; false" />
+<mutation numlines="1" error="This expression cannot be assigned to" line0="false || false" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="-- and &#43;&#43; may only be used on an identifier" line0="!&#40;false&#41;" />
+<mutation numlines="1" error="-- and ++ may only be used on an identifier" line0="!(false)" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="-- and &#43;&#43; may only be used on an identifier" line0="!false" />
+<mutation numlines="1" error="-- and ++ may only be used on an identifier" line0="!false" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Unsupported statement in block&#58; TrueKeyword" line0="true" />
+<mutation numlines="1" error="Unsupported statement in block: TrueKeyword" line0="true" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Unsupported statement in block&#58; FalseKeyword" line0="false" />
+<mutation numlines="1" error="Unsupported statement in block: FalseKeyword" line0="false" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="This expression cannot be assigned to" line0="false &#38;&#38; &#40;true &#124;&#124; !false&#41; &#124;&#124; !&#40;true &#38;&#38; false&#41;" />
+<mutation numlines="1" error="This expression cannot be assigned to" line0="false &#38;&#38; (true || !false) || !(true &#38;&#38; false)" />
 <next>
 <block type="variables_set">
 <field name="VAR">x</field>
@@ -134,9 +134,9 @@
 </statement>
 </block>
 <comment h="120" w="200" data="0">
-&#64;case&#58; triple equals
+@case: triple equals
 </comment>
 <comment h="120" w="240" data="1">
-&#64;case&#58; not double equals
+@case: not double equals
 </comment>
 </xml>

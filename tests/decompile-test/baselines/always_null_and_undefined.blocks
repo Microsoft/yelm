@@ -2,16 +2,16 @@
 <block type="pxt-on-start">
 <statement name="HANDLER">
 <block type="typescript_statement">
-<mutation declaredvars="x2" numlines="1" line0="let x2 &#61; 0" />
+<mutation declaredvars="x2" numlines="1" line0="let x2 = 0" />
 <next>
 <block type="typescript_statement">
-<mutation declaredvars="x" numlines="1" line0="let x &#61; 0" />
+<mutation declaredvars="x" numlines="1" line0="let x = 0" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Unsupported syntax kind for output expression block&#58; NullKeyword" line0="x &#61; null&#59;" />
+<mutation numlines="1" error="Unsupported syntax kind for output expression block: NullKeyword" line0="x = null;" />
 <next>
 <block type="typescript_statement">
-<mutation numlines="1" error="Undefined is not supported in blocks" line0="x2 &#61; undefined&#59;" />
+<mutation numlines="1" error="Undefined is not supported in blocks" line0="x2 = undefined;" />
 </block>
 </next>
 </block>
