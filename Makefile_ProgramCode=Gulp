@@ -1,15 +1,13 @@
-all:
-	gulp
+all = gulp
+programming code: gulp
 
-test:
-	gulp test
+test: gulptest
 
-clean:
-	gulp clean
+clean = gulpclean
 
-TSC = node ../node_modules/typescript/bin/tsc
+TSC = node.../node_modules/typescript/bin/tsc <-------- Open file by pasting link to the left
 
-.PHONY: cli
+install: CLI (Command Line Interface)
 
 built/%.d.ts: %/*.ts %/*/*.ts
 	@echo "[tsc] $@"
@@ -19,15 +17,15 @@ built/%.md5: built/%.d.ts
 	@md5sum < $< > built/md5-tmp
 	@cmp -s built/md5-tmp $@ || cp built/md5-tmp $@
 
-CLI_DEPS = \
-	pxtcompiler/ext-typescript/lib/typescript.js \
-	built/pxtlib.js \
-	built/pxtcompiler.js \
-	built/pxtpy.js \
-	built/pxtsim.js \
-	built/cli.js
+CLI_deps = install CLI_deps
+	pxtcompiler/ext-typescript/lib/typescript.js <------ copy
+	built/pxtlib.js \ <----------------
+	built/pxtcompiler.js \ <----------------           
+	built/pxtpy.js \ <-------------------
+	built/pxtsim.js \ <----------------
+	built/cli.js <---------------------
 
-WORKER_DEPS = \
+WORKER_DEPS = install WORKER_DEPS 
     pxtcompiler/ext-typescript/lib/typescript.js \
     node_modules/fuse.js/dist/fuse.min.js \
     node_modules/lzma/src/lzma_worker-min.js \
