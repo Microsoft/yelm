@@ -8,11 +8,13 @@ let Annotations = false;
 let Blocks = APIs && Annotations;
 ```
 
-## ~ hint
+### ~ hint
+
+#### Blocks Playground
 
 Try out some blocks live in the **[Playground](https://makecode.com/playground)** to see how they work. Modify them or even create new ones!
 
-## ~
+### ~
 
 Blocks are defined by annotations added to the beginning of an API element (export function, method, enum, etc.). Attributes are specified on annotation lines that begin with the comment form of `//%`. All of the `//%` annotations are found in TypeScript library files containg the code for the exposed APIs.
 They can optionally be [auto-generated](/simshim) from C++ library files or from TypeScript
@@ -42,6 +44,7 @@ namespace basic {
     ...
 }
 ```
+
 * `icon` icon Unicode character from the icon font to display. The [Semantic UI](https://semantic-ui.com/elements/icon.html) icon set has been ported from Font Awesome (v4.5.6 at the time of writing), and a full list can be found at http://fontawesome.io/icons/
 * `color` should be included in a comment line starting with `//%`. The color takes a **hue** value or a HTML color.
 * `weight` determines where your category appears in the toolbox. Higher weight means it appears closer to the top.
@@ -55,10 +58,15 @@ This makes it easier for the user to go through your available blocks.
 
 To define your groups, add the `groups` attribute to your namespace. The `groups` attribute is an array of group names. You can individually assign blocks to these groups when defining each block.
 
-> **Notes**:
->* The order in which you define your groups is the order in which the groups will appear in the toolbox flyout
->* Blocks that are not assigned to a named group are placed in the default `others` group, which does not show a label. The `others` group can be used to decide where in the order of groups the ungrouped blocks will appear. This is based on where you place `others` in the `groups` array.
->* When assigning blocks to groups, names are case sensitive, so make sure the group names you put on your blocks are identical to the ones in your group definitions.
+### ~ hint
+
+#### Group ordering
+
+* The order in which you define your groups is the order in which the groups will appear in the toolbox flyout.
+* Blocks that are not assigned to a named group are placed in the default `others` group, which does not show a label. The `others` group can be used to decide where in the order of groups the ungrouped blocks will appear. This is based on where you place `others` in the `groups` array.
+* When assigning blocks to groups, names are case sensitive, so make sure the group names you put on your blocks are identical to the ones in your group definitions.
+
+### ~
 
 ```typescript-ignore
 /**
@@ -67,6 +75,18 @@ To define your groups, add the `groups` attribute to your namespace. The `groups
 //% color=190 weight=100 icon="\uf1ec" block="Basic Blocks"
 //% groups=['LED matrix', 'Control flow', 'others']
 namespace basic {
+    //% block="clear LEDs"
+    //% group="LED matrix"
+    export function clearLEDs() {
+
+    }
+
+    //% block="cancel timer"
+    //% group="Control Flow"
+    export function cancelTimer() {
+
+    }
+}
 ```
 
 ## Blocks
@@ -88,6 +108,7 @@ you can specify the `blockId` and `block` parameters.
 export function showNumber(v: number, interval: number = 150): void
 { }
 ```
+
 * `blockId` is a constant, unique id for the block. This id is serialized in block code so changing
   it will break your users. If not specified, it is derived from namespace and function names,
   so renaming your functions or namespaces will break both your TypeScript and Blocks users.
