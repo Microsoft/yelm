@@ -179,6 +179,11 @@ body#docs.tutorial {
     padding: 0.5rem;
     height: calc(@tutorialCardHeight - 1.5rem);
     overflow: hidden;
+
+    a:not([href]), a[href^="#"] {
+        color: @black;
+        text-decoration: underline;
+    }
 }
 
 .tutorial #tutorialcard.hasHint .tutorialmessage {
