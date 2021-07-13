@@ -4253,13 +4253,18 @@ function initPacketIO() {
     pxt.packetio.configureEvents(
         () => data.invalidate("packetio:*"),
         (buf, isErr) => {
-            const data = Util.fromUTF8(Util.uint8ArrayToString(buf))
-            //pxt.debug('serial: ' + data)
-            window.postMessage({
-                type: 'serial',
-                id: 'n/a', // TODO
-                data
-            }, "*")
+            try {
+                const data = Util.fromUTF8(Util.uint8ArrayToString(buf))
+                //pxt.debug('serial: ' + data)
+                window.postMessage({
+                    type: 'serial',
+                    id: 'n/a', // TODO
+                    data
+                }, "*")
+            } catch (e) {
+                // data decoding failed, ignore
+                console.debug(`invalid utf8 serial data`, { buf, e })
+            }
         },
         (type, payload) => {
             const messageSimulators = pxt.appTarget.simulator?.messageSimulators;
