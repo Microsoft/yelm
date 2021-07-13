@@ -1,0 +1,28 @@
+# enforce unix style line endings
+*.ts text lf=eol
+*.tsx text lf=eol
+*.cpp text lf=eol
+*.h text lf=eol
+*.jres text lf=eol
+*.asm text lf=eol
+*.md text lf=eol
+*.txt text lf=eol
+*.js text lf=eol
+*.json text lf=eol
+*.xml text lf=eol
+*.svg text lf=eol
+*.yaml text lf=eol
+*.css text lf=eol
+*.html text lf=eol
+*.py text lf=eol
+*.exp text lf=eol
+*.manifest text lf=eol
+
+# do not enforce text for everything - it causes issues with random binary files
+
+*.sln text eol=crlf
+
+*.png = binary
+*.jpg = binary
+*.jpeg = binary
+*.gif = binary
