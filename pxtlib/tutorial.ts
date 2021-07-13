@@ -10,13 +10,17 @@ namespace pxt.tutorial {
             return undefined; // error parsing steps
 
         // collect code and infer editor
-        const { code, templateCode, editor, language, jres, assetJson, customTs, tutorialValidationRulesStr } = computeBodyMetadata(body);
+        const { code, templateCode, editor, language, jres, assetJson, customTs, tutorialValidationRulesStr, validationOverlapStr } = computeBodyMetadata(body);
 
         // parses tutorial rules string into a map of rules and enablement flag 
         let tutorialValidationRules: pxt.Map<boolean>;
+        let validationOverlapBlocks: pxt.Map<string>;
         if (metadata.tutorialCodeValidation) {
             tutorialValidationRules = pxt.Util.jsonTryParse(tutorialValidationRulesStr);
             categorizingValidationRules(tutorialValidationRules, title);
+            if (validationOverlapStr) {
+                validationOverlapBlocks = pxt.Util.jsonTryParse(validationOverlapStr);
+            }
         }
 
         // noDiffs legacy
@@ -52,12 +56,13 @@ namespace pxt.tutorial {
             jres,
             assetFiles,
             customTs,
-            tutorialValidationRules
+            tutorialValidationRules,
+            validationOverlapBlocks
         };
     }
 
     export function getMetadataRegex(): RegExp {
-        return /``` *(sim|block|blocks|filterblocks|spy|ghost|typescript|ts|js|javascript|template|python|jres|assetjson|customts|tutorialValidationRules|requiredTutorialBlock)\s*\n([\s\S]*?)\n```/gmi;
+        return /``` *(sim|block|blocks|filterblocks|spy|ghost|typescript|ts|js|javascript|template|python|jres|assetjson|customts|tutorialValidationRules|requiredTutorialBlock|validationOverlap)\s*\n([\s\S]*?)\n```/gmi;
     }
 
     function computeBodyMetadata(body: string) {
@@ -73,6 +78,7 @@ namespace pxt.tutorial {
         let assetJson: string;
         let customTs: string;
         let tutorialValidationRulesStr: string;
+        let validationOverlapStr: string;
         // Concatenate all blocks in separate code blocks and decompile so we can detect what blocks are used (for the toolbox)
         body
             .replace(/((?!.)\s)+/g, "\n")
@@ -115,6 +121,9 @@ namespace pxt.tutorial {
                     case "tutorialValidationRules":
                         tutorialValidationRulesStr = m2;
                         break;
+                    case "validationOverlap":
+                        validationOverlapStr = m2;
+                        break;
                 }
                 code.push(m1 == "python" ? `\n${m2}\n` : `{\n${m2}\n}`);
                 idx++
@@ -122,7 +131,7 @@ namespace pxt.tutorial {
             });
         // default to blocks
         editor = editor || pxt.BLOCKS_PROJECT_NAME
-        return { code, templateCode, editor, language, jres, assetJson, customTs, tutorialValidationRulesStr }
+        return { code, templateCode, editor, language, jres, assetJson, customTs, tutorialValidationRulesStr, validationOverlapStr }
 
         function checkTutorialEditor(expected: string) {
             if (editor && editor != expected) {
@@ -409,7 +418,8 @@ ${code}
             jres: tutorialInfo.jres,
             assetFiles: tutorialInfo.assetFiles,
             customTs: tutorialInfo.customTs,
-            tutorialValidationRules: tutorialInfo.tutorialValidationRules
+            tutorialValidationRules: tutorialInfo.tutorialValidationRules,
+            validationOverlapBlocks: tutorialInfo.validationOverlapBlocks
         };
 
         return { options: tutorialOptions, editor: tutorialInfo.editor };

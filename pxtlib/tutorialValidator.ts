@@ -47,6 +47,12 @@ namespace pxt.tutorial {
                             const requiredBlocksList = extractRequiredBlockSnippet(tutorial, indexdb);
                             currRuleToValidate = validateMeetRequiredBlocks(usersBlockUsed, requiredBlocksList, currRuleToValidate);
                             break;
+                        case "overlap":
+                            const tutorialDropdowns = tutorial.validationOverlapBlocks;
+                            // TODO: Shakao - need method 
+                            const userDropdowns: pxt.Map<string> = {};
+                            currRuleToValidate = validateOverlapBlock(usersBlockUsed, tutorialBlockUsed, tutorialDropdowns, userDropdowns, currRuleToValidate);
+                            break;
                     }
                 }
             }
@@ -117,7 +123,7 @@ namespace pxt.tutorial {
     */
     function extractBlockSnippet(tutorial: TutorialOptions, indexdb: pxt.Map<pxt.Map<number>>) {
         const { tutorialStepInfo, tutorialStep } = tutorial;
-        const body = tutorial.tutorialStepInfo[tutorialStep].hintContentMd;
+        const body = tutorialStepInfo[tutorialStep].hintContentMd;
         let hintCode = "";
         if (body != undefined) {
             body.replace(/((?!.)\s)+/g, "\n").replace(/``` *(block|blocks)\s*\n([\s\S]*?)\n```/gmi, function (m0, m1, m2) {
@@ -153,8 +159,8 @@ namespace pxt.tutorial {
 
     /**
     * Strict Rule: Checks if the all required number of blocks for a tutorial step is used, returns a TutorialRuleStatus
-    * @param usersBlockUsed an array of strings
-    * @param tutorialBlockUsed the next available index
+     * @param usersBlockUsed a map of user's blocks and count
+     * @param tutorialBlockUsed a map of tutorial blocks and count
     * @param currRule the current rule with its TutorialRuleStatus
     * @return a tutorial rule status for currRule
     */
@@ -184,8 +190,8 @@ namespace pxt.tutorial {
 
     /**
     * Passive Rule: Checks if the users has at least one block type for each rule
-    * @param usersBlockUsed an array of strings
-    * @param tutorialBlockUsed the next available index
+     * @param usersBlockUsed a map of user's blocks and count
+     * @param tutorialBlockUsed a map of tutorial blocks and count
     * @param currRule the current rule with its TutorialRuleStatus
     * @return a tutorial rule status for currRule
     */
@@ -206,14 +212,13 @@ namespace pxt.tutorial {
 
     /**
      * Strict Rule: Checks if the all required number of blocks for a tutorial step is used, returns a TutorialRuleStatus
-     * @param usersBlockUsed an array of strings
-     * @param tutorialBlockUsed the next available index
+     * @param usersBlockUsed a map of user's blocks and count
+     * @param tutorialBlockUsed a map of tutorial blocks and count
      * @param currRule the current rule with its TutorialRuleStatus
      * @return a tutorial rule status for currRule
      */
     function validateMeetRequiredBlocks(usersBlockUsed: pxt.Map<number>, requiredBlocks: pxt.Map<number>, currRule: TutorialRuleStatus): TutorialRuleStatus {
         currRule.isStrict = true;
-        const userBlockKeys = Object.keys(usersBlockUsed);
         let requiredBlockKeys: string[] = []
         let blockIds = [];
         if (requiredBlocks != undefined) {
@@ -231,6 +236,32 @@ namespace pxt.tutorial {
         currRule.ruleMessage = message;
         currRule.ruleStatus = isValid;
         currRule.blockIds = blockIds;
+        return currRule;
+    }
+
+    /**
+     * Strict Rule: Checks the overlap block kinds from the tutorial to the user's
+     * @param usersBlockUsed a map of user's blocks and count
+     * @param tutorialBlockUsed a map of tutorial blocks and count
+     * @param tutorialDropdowns a map of tutorial's dropdown kinds
+     * @param userDropdowns a map of user's dropdown kinds
+     * @param currRule the current rule with its TutorialRuleStatus
+     * @return a tutorial rule status for currRule
+     */
+    function validateOverlapBlock(usersBlockUsed: pxt.Map<number>, tutorialBlockUsed: pxt.Map<number>, tutorialDropdowns: pxt.Map<string>, userDropdowns: pxt.Map<string>, currRule: TutorialRuleStatus): TutorialRuleStatus {
+        if (tutorialBlockUsed != undefined) {
+            currRule.isStrict = true;
+            let isValid = (!tutorialBlockUsed['spritesoverlap']); // if this tutorial step doesn't use an overlap, set valid to true
+            let message = lf("Double check overlap's block dropdowns. Are you using: ");
+            if (tutorialBlockUsed['spritesoverlap'] && usersBlockUsed['spritesoverlap']) {
+                isValid = (tutorialDropdowns['kindOne'] == userDropdowns['kindOne']) && (tutorialDropdowns['kindTwo'] == userDropdowns['kindTwo']);
+                if (!isValid) {
+                    message = message + "kindOne: " + tutorialDropdowns['kindOne'] + " kindTwo: " + tutorialDropdowns['kindTwo'];
+                }
+            }
+            currRule.ruleMessage = message;
+            currRule.ruleStatus = isValid;
+        }
         return currRule;
     }
 }

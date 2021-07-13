@@ -73,7 +73,7 @@ export class ShowValidationMessage extends data.Component<TutorialCodeValidation
             return <div>
                 <div className="codeValidationPopUpText">{rule.ruleTurnOn && !rule.ruleStatus ? rule.ruleMessage : ''}</div>
                 <div className="validationRendering">
-                    {blockUris.map((blockUri, index) => <div> <img key={index + blockUri} src={blockUri} alt="block rendered" /></div>)}
+                    {blockUris.map((blockUri, index) => <div> <img key={index + blockUri + rule.ruleName} src={blockUri} alt="block rendered" /></div>)}
                 </div>
             </div>
 
