@@ -124,10 +124,12 @@ class CompletionProvider implements monaco.languages.CompletionItemProvider {
                         // remove what precedes the "." in the full snippet.
                         // E.g. if the user is typing "mobs.", we want to complete with "spawn" (name) not "mobs.spawn" (qName)
                         if (completions.isMemberCompletion && snippet) {
-                            const nameStart = snippet.lastIndexOf(name);
-                            if (nameStart !== -1) {
-                                snippet = snippet.substr(nameStart)
+                            let snippetQualifiers = getQualifiers(snippet);
+                            if (qName.indexOf("anyButton") >= 0) {
+                                console.log("snippet");
+                                console.dir({ snippet, snippetQualifiers })
                             }
+                            snippet = snippet.substr(snippetQualifiers.join('.').length + 1)
                         }
                     }
                     const label = completions.isMemberCompletion ? name : qName
@@ -167,6 +169,19 @@ class CompletionProvider implements monaco.languages.CompletionItemProvider {
 
         function tosort(i: number): string {
             return ("000" + i).slice(-4);
+        }
+        function getQualifiers(str: string): string[] {
+            if (!str) return []
+            const parts = str.split('.')
+            parts.pop() // the last part is never a qualifier
+            const isValidName = (s: string) => s.match(/^[a-zA-Z_$][0-9a-zA-Z_$]*$/)
+            let quals: string[] = [];
+            for (let p of parts) {
+                if (!isValidName(p))
+                    break;
+                quals.push(p)
+            }
+            return quals;
         }
     }
 }
