@@ -980,7 +980,7 @@ export class ProjectView
         this.loadBlocklyAsync();
 
         // subscribe to user preference changes (for simulator or non-render subscriptions)
-        pxt.data.subscribe(this.highContrastSubscriber, auth.HIGHCONTRAST);
+        pxt.data.subscribe(this.highContrastSubscriber, pxt.auth.HIGHCONTRAST);
     }
 
     public componentWillUnmount() {
@@ -1056,7 +1056,7 @@ export class ProjectView
                 return previousEditor ? previousEditor.unloadFileAsync() : Promise.resolve();
             })
             .then(() => {
-                let hc = this.getData<boolean>(auth.HIGHCONTRAST)
+                let hc = this.getData<boolean>(pxt.auth.HIGHCONTRAST)
                 return this.editor.loadFileAsync(this.editorFile, hc)
             })
             .then(() => {
@@ -1510,7 +1510,7 @@ export class ProjectView
 
         // If user is signed in, sync this project to the cloud.
         if (this.hasCloudSync()) {
-            h.cloudUserId = this.getUser()?.id;
+            h.cloudUserId = this.getUserProfile()?.id;
         }
 
         return compiler.newProjectAsync()
@@ -2492,7 +2492,7 @@ export class ProjectView
             pubCurrent: false,
             target: pxt.appTarget.id,
             targetVersion: pxt.appTarget.versions.target,
-            cloudUserId: this.getUser()?.id,
+            cloudUserId: this.getUserProfile()?.id,
             temporary: options.temporary,
             tutorial: options.tutorial,
             extensionUnderTest: options.extensionUnderTest,
@@ -3235,7 +3235,7 @@ export class ProjectView
                         if (!cancellationToken.isCancelled()) {
                             pxt.debug(`sim: run`)
 
-                            const hc = pxt.data.getData<boolean>(auth.HIGHCONTRAST)
+                            const hc = pxt.data.getData<boolean>(pxt.auth.HIGHCONTRAST)
                             simulator.run(pkg.mainPkg, opts.debug, resp, {
                                 mute: this.state.mute,
                                 highContrast: hc,
@@ -4226,7 +4226,7 @@ export class ProjectView
 
         const isApp = cmds.isNativeHost() || pxt.winrt.isWinRT() || pxt.BrowserUtils.isElectron();
 
-        const hc = this.getData<boolean>(auth.HIGHCONTRAST)
+        const hc = this.getData<boolean>(pxt.auth.HIGHCONTRAST)
 
         let rootClassList = [
             "ui",
@@ -4279,7 +4279,7 @@ export class ProjectView
         const showFileList = !sandbox && !inTutorial && !this.isAssetsActive()
             && !(isBlocks
                 || (pkg.mainPkg && pkg.mainPkg.config && (pkg.mainPkg.config.preferredEditor == pxt.BLOCKS_PROJECT_NAME)));
-        const hasIdentity = auth.hasIdentity();
+        const hasIdentity = pxt.auth.hasIdentity();
         return (
             <div id='root' className={rootClasses}>
                 {greenScreen ? <greenscreen.WebCam close={this.toggleGreenScreen} /> : undefined}
@@ -4896,14 +4896,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Handle auth callback redirect.
     if (query["authcallback"]) {
-        auth.loginCallback(query);
+        pxt.auth.loginCallback(query);
     }
 
-    auth.init();
+    pxt.auth.initVirtualApi();
     cloud.init(); // depends on auth.init() and workspace.ts's top level
     cloudsync.loginCheck()
     parseLocalToken();
-    auth.authCheck();
+    auth.authCheckAsync();
     hash = parseHash();
     appcache.init(() => theEditor.reloadEditor());
     blocklyFieldView.init();
@@ -4940,16 +4940,16 @@ document.addEventListener("DOMContentLoaded", () => {
     else workspace.setupWorkspace("browser");
     // disable auth in iframe scenarios
     if (workspace.getWorkspaceType() === "iframe")
-        auth.enableAuth(false)
+        pxt.auth.enableAuth(false)
     Promise.resolve()
         .then(async () => {
             const href = window.location.href;
             let force = false;
-            const cloudLang = auth.getState()?.preferences?.language;
+            const cloudLang = auth.userPreferences()?.language;
             // kick of a user preferences check; if the language is different we'll request they reload
-            auth.initialUserPreferences().then((pref) => {
+            auth.initialUserPreferencesAsync().then((pref) => {
                 const cookieLang = pxt.BrowserUtils.getCookieLang()
-                if (cookieLang && pref && pref.language != cookieLang) {
+                if (cookieLang && pref && pref.language && pref.language != cookieLang) {
                     pxt.BrowserUtils.setCookieLang(pref.language);
                     core.infoNotification(lf("Reload the page to apply your new language preference."));
                     pxt.tickEvent(`identity.preferences.askingUserToReloadToApplyLang`)

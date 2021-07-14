@@ -1285,7 +1285,7 @@ export class Modal extends data.Component<ModalProps, ModalState> {
             'modal transition visible active',
             className
         ]);
-        const hc = this.getData<boolean>(auth.HIGHCONTRAST);
+        const hc = this.getData<boolean>(pxt.auth.HIGHCONTRAST);
         const portalClassName = cx([
             hc ? 'hc' : '',
             mountClasses

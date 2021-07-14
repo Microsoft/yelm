@@ -43,7 +43,7 @@ export class LoginDialog extends auth.Component<LoginDialogProps, LoginDialogSta
 
     renderCore() {
         const { visible } = this.state;
-        const providers = auth.identityProviders();
+        const providers = pxt.auth.identityProviders();
 
         return (
             <sui.Modal isOpen={visible} className="signindialog" size="tiny"
@@ -115,8 +115,8 @@ export class UserMenu extends auth.Component<UserMenuProps, UserMenuState> {
         this.props.parent.showLoginDialog(this.props.continuationHash);
     }
 
-    handleLogoutClicked = () => {
-        auth.logout();
+    handleLogoutClicked = async () => {
+        await auth.logoutAsync();
     }
 
     handleProfileClicked = () => {
@@ -135,7 +135,7 @@ export class UserMenu extends auth.Component<UserMenuProps, UserMenuState> {
 
     renderCore() {
         const loggedIn = this.isLoggedIn();
-        const user = this.getUser();
+        const user = this.getUserProfile();
         const icon = "user large";
         const title = lf("User Menu");
 

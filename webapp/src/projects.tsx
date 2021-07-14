@@ -283,7 +283,7 @@ export class ProjectSettingsMenu extends data.Component<ProjectSettingsMenuProps
     }
 
     renderCore() {
-        const highContrast = this.getData<boolean>(auth.HIGHCONTRAST)
+        const highContrast = this.getData<boolean>(pxt.auth.HIGHCONTRAST)
         const targetTheme = pxt.appTarget.appTheme;
         const reportAbuse = pxt.appTarget.cloud && pxt.appTarget.cloud.sharing && pxt.appTarget.cloud.importing;
         const showDivider = targetTheme.selectLanguage || targetTheme.highContrast;

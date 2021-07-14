@@ -214,8 +214,8 @@ function getTokenAsync(): Promise<ImmersiveReaderToken> {
 export function launchImmersiveReader(content: string, tutorialOptions: pxt.tutorial.TutorialOptions) {
     pxt.tickEvent("immersiveReader.launch", {tutorial: tutorialOptions.tutorial, tutorialStep: tutorialOptions.tutorialStep});
 
-    const userReaderPref = pxt.data.getData<string>(auth.READER) || ""
-    const langPref = pxt.data.getData<string>(auth.LANGUAGE) || "";
+    const userReaderPref = pxt.data.getData<string>(pxt.auth.READER) || ""
+    const langPref = pxt.data.getData<string>(pxt.auth.LANGUAGE) || "";
     const tutorialData = {
         chunks: [{
             content: beautifyText(content),

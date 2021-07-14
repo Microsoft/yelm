@@ -190,7 +190,7 @@ export class HeaderBar extends data.Component<ISettingsProps, {}> {
 
     renderCore() {
         const targetTheme = pxt.appTarget.appTheme;
-        const highContrast = this.getData<boolean>(auth.HIGHCONTRAST);
+        const highContrast = this.getData<boolean>(pxt.auth.HIGHCONTRAST);
         const view = this.getView();
 
         const { home, header, tutorialOptions } = this.props.parent.state;

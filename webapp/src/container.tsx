@@ -255,7 +255,7 @@ export class SettingsMenu extends data.Component<SettingsMenuProps, SettingsMenu
     }
 
     renderCore() {
-        const highContrast = this.getData<boolean>(auth.HIGHCONTRAST)
+        const highContrast = this.getData<boolean>(pxt.auth.HIGHCONTRAST)
         const { greenScreen, accessibleBlocks } = this.state;
         const targetTheme = pxt.appTarget.appTheme;
         const packages = pxt.appTarget.cloud && !!pxt.appTarget.cloud.packages;

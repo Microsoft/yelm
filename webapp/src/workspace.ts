@@ -128,7 +128,7 @@ async function switchToMemoryWorkspace(reason: string): Promise<void> {
 
 export function getHeaders(withDeleted = false) {
     maybeSyncHeadersAsync();
-    const cloudUserId = auth.user()?.id;
+    const cloudUserId = auth.userProfile()?.id;
     let r = allScripts.map(e => e.header).filter(h =>
         (withDeleted || !h.isDeleted) &&
         !h.isBackup &&
@@ -258,9 +258,9 @@ export function getHeaderLastCloudSync(h: Header): number {
     return h.cloudLastSyncTime || 0/*never*/
 }
 export function getLastCloudSync(): number {
-    if (!auth.loggedInSync())
+    if (!auth.loggedIn())
         return 0;
-    const userId = auth.user()?.id;
+    const userId = auth.userProfile()?.id;
     const cloudHeaders = getHeaders(true)
         .filter(h => h.cloudUserId && h.cloudUserId === userId);
     if (!cloudHeaders.length)
@@ -512,8 +512,8 @@ export async function saveAsync(h: Header, text?: ScriptText, fromCloudSync?: bo
         h.targetVersion = h.targetVersion || "0.0.0";
 
         // cloud user association
-        if (auth.hasIdentity() && auth.loggedInSync()) {
-            h.cloudUserId = auth.user()?.id
+        if (auth.hasIdentity() && auth.loggedIn()) {
+            h.cloudUserId = auth.userProfile()?.id
         }
     }
 

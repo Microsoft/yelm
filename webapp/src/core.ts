@@ -299,7 +299,7 @@ export const ENTER_KEY = 13;
 export const SPACE_KEY = 32;
 
 export function getHighContrastOnce(): boolean {
-    return pxt.data.getData<boolean>(auth.HIGHCONTRAST) || false
+    return pxt.data.getData<boolean>(pxt.auth.HIGHCONTRAST) || false
 }
 export function toggleHighContrast() {
     setHighContrast(!getHighContrastOnce())
