@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 
 import { SkillMapState } from '../store/reducer';
 import { dispatchChangeSelectedItem, dispatchShowCompletionModal,
-    dispatchSetSkillMapCompleted, dispatchOpenActivity } from '../actions/dispatch';
+    dispatchSetSkillMapCompleted, dispatchOpenActivity, dispatchShowCarryoverModal } from '../actions/dispatch';
 import { GraphNode } from './GraphNode';
 import { GraphPath } from "./GraphPath";
 
-import { getActivityStatus, isActivityUnlocked } from '../lib/skillMapUtils';
+import { getActivityStatus, isCodeCarryoverEnabled } from '../lib/skillMapUtils';
 import { SvgGraphItem, SvgGraphPath } from '../lib/skillGraphUtils';
 import { tickEvent } from "../lib/browserUtils";
 
@@ -32,6 +32,7 @@ export interface SkillGraphProps {
     dispatchShowCompletionModal: (mapId: string, activityId?: string) => void;
     dispatchSetSkillMapCompleted: (mapId: string) => void;
     dispatchOpenActivity: (mapId: string, activityId: string) => void;
+    dispatchShowCarryoverModal: (mapId: string, activityId: string) => void;
 }
 
 class SkillGraphImpl extends React.Component<SkillGraphProps> {
@@ -60,8 +61,14 @@ class SkillGraphImpl extends React.Component<SkillGraphProps> {
     }
 
     protected onItemDoubleClick = (activityId: string, kind: MapNodeKind) => {
-        const { user, pageSourceUrl, map, dispatchOpenActivity } = this.props;
-        if (kind === "activity" && isActivityUnlocked(user, pageSourceUrl, map, activityId)) {
+        const { user, pageSourceUrl, map, dispatchOpenActivity, dispatchShowCarryoverModal } = this.props;
+        const { status } = getActivityStatus(user, pageSourceUrl, map, activityId);
+        const activity = map.activities[activityId];
+        tickEvent("skillmap.activity.open.doubleclick", { path: map.mapId, activity: activityId, status: status || "" });
+
+        if (isCodeCarryoverEnabled(user, pageSourceUrl, map, activity)) {
+            dispatchShowCarryoverModal(map.mapId, activityId);
+        } else if (kind == "activity") {
             dispatchOpenActivity(map.mapId, activityId);
         }
     }
@@ -121,7 +128,8 @@ const mapDispatchToProps = {
     dispatchChangeSelectedItem,
     dispatchShowCompletionModal,
     dispatchSetSkillMapCompleted,
-    dispatchOpenActivity
+    dispatchOpenActivity,
+    dispatchShowCarryoverModal
 };
 
 export const SkillGraph = connect(mapStateToProps, mapDispatchToProps)(SkillGraphImpl);

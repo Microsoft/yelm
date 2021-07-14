@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { dispatchOpenActivity, dispatchShowRestartActivityWarning, dispatchShowShareModal, dispatchShowCarryoverModal } from '../actions/dispatch';
 
-import { ActivityStatus, lookupActivityProgress, lookupPreviousActivityStates } from '../lib/skillMapUtils';
+import { ActivityStatus, lookupActivityProgress, isCodeCarryoverEnabled } from '../lib/skillMapUtils';
 import { tickEvent } from '../lib/browserUtils';
 import { editorUrl } from "./makecodeFrame";
 import { SkillMapState } from "../store/reducer";
@@ -113,17 +113,10 @@ function mapStateToProps(state: SkillMapState, ownProps: any) {
     if (!state) return {};
 
     const props = ownProps as OwnProps;
-    const map = state.maps[ownProps.mapId];
-    const activity = map.activities[ownProps.activityId] as MapActivity;
-
-    const previous = lookupPreviousActivityStates(state.user, state.pageSourceUrl, map, activity.activityId);
-    const previousActivityCompleted = previous.some(state => state?.isCompleted &&
-        state.maxSteps === state.currentStep);
-
-    const progress = lookupActivityProgress(state.user, state.pageSourceUrl, ownProps.mapId, ownProps.activityId);
-
+    const map = state.maps[props.mapId];
+    const activity = map.activities[props.activityId] as MapActivity;
     return {
-        showCodeCarryoverModal: activity.allowCodeCarryover && previousActivityCompleted && !progress?.headerId
+        showCodeCarryoverModal: isCodeCarryoverEnabled(state.user, state.pageSourceUrl, map, activity)
     };
 }
 

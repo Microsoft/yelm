@@ -15,6 +15,7 @@ export function test() {
 
 export function parseSkillMap(text: string): { maps: SkillMap[], metadata?: PageMetadata } {
     const sections = getSectionsFromText(text);
+    if (!sections?.length) error(`Cannot parse content: ${text}`)
 
     const parsed: SkillMap[] = [];
     let metadata: PageMetadata | undefined;
